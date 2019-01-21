@@ -1,0 +1,67 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "Lz5Php4tvbJOB/6FWGlStzhppL0=",
+			"path": "github.com/spf13/pflag",
+			"revision": "9a97c102cda95a86cec2345a6f09f55a939babf5",
+			"revisionTime": "2018-08-08T15:28:24Z"
+		},
+		{
+			"checksumSHA1": "csSdRffmHsFySXZcfRoUCiD2OqE=",
+			"path": "github.com/unidoc/unidoc/common",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "MDqKR6dwMoUUlL90GVePcujafDs=",
+			"path": "github.com/unidoc/unidoc/common/license",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "N6Y0zibMbxTaWieOzLY3/BpwUws=",
+			"path": "github.com/unidoc/unidoc/pdf/core",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "jIZMVt3kRYKvSkhEWcWivynKdX0=",
+			"path": "github.com/unidoc/unidoc/pdf/model",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "6UadnCB59RsOttJW/VKKgPHcs4I=",
+			"path": "github.com/unidoc/unidoc/pdf/model/fonts",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "qK2Gfc5HFjs5tV6eamVAaD8YPRI=",
+			"path": "github.com/unidoc/unidoc/pdf/model/sampling",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "Fg3IwpUG0I3G4zYJ5Aw7dMBYlt0=",
+			"path": "github.com/unidoc/unidoc/pdf/model/textencoding",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "+za+KpWv/GA/bnGHTrpWS7MFTIw=",
+			"path": "github.com/unidoc/unidoc/pdf/ps",
+			"revision": "b51d97d4f2854d8214547f0f942852f1ae8bec58",
+			"revisionTime": "2019-01-10T11:25:31Z"
+		},
+		{
+			"checksumSHA1": "PF6VjvpNpOdR8epWH1Liyy7x1Qg=",
+			"path": "golang.org/x/image/tiff/lzw",
+			"revision": "183bebdce1b249c42a7cf6772817e8c2e873b966",
+			"revisionTime": "2018-10-30T22:08:32Z"
+		}
+	],
+	"rootPath": "github.com/zihaoyu/cut-pdf"
+}
