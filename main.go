@@ -37,7 +37,6 @@ func main() {
 	}
 
 	for i := 1; i <= numPages; i++ {
-		fmt.Println(fmt.Sprintf("processing page %d", i))
 		page, err := pdfReader.GetPage(i)
 		if err != nil {
 			panic(fmt.Sprintf("error getting page %d: %v", i, err))
@@ -68,16 +67,6 @@ func main() {
 		x := *col - 1
 		y := *rows - *row
 
-		// for y := *rows - 1; y >= 0; y-- {
-		// 	for x := 0; x < *cols; x++ {
-		// 		fmt.Println(fmt.Sprintf("  processing row %d col %d", y, x))
-		// 		p := *page
-
-		// 		mmbox, err := p.GetMediaBox()
-		// 		if err != nil {
-		// 			panic(fmt.Sprintf("error processing page %d: %v", i, err))
-		// 		}
-
 		// every (x,y) is a lower-left coordinate
 		(*mbox).Llx = xs[x]
 		(*mbox).Lly = ys[y]
@@ -92,8 +81,6 @@ func main() {
 			panic(fmt.Sprintf("error cropping page %d: %v", i, err))
 		}
 
-		// 	}
-		// }
 	}
 
 	fOutput, err := os.Create(*output)
