@@ -13,8 +13,6 @@ func main() {
 	output := flag.String("output", "", "output file path")
 	rows := flag.Int("rows", 1, "divide each page into this many rows, 1 means no change")
 	cols := flag.Int("cols", 1, "divide each page into this columns, 1 means no change")
-	row := flag.Int("row", 1, "row number of the crop")
-	col := flag.Int("col", 1, "column number of the crop")
 
 	flag.Parse()
 
@@ -64,23 +62,32 @@ func main() {
 			ys[j] = croppedHeight * float64(j)
 		}
 
-		x := *col - 1
-		y := *rows - *row
+		for y := *rows - 1; y >= 0; y-- {
+			for x := 0; x < *cols; x++ {
+				// every (x,y) is a lower-left coordinate
 
-		// every (x,y) is a lower-left coordinate
-		(*mbox).Llx = xs[x]
-		(*mbox).Lly = ys[y]
-		(*mbox).Urx = xs[x+1]
-		(*mbox).Ury = ys[y+1]
+				// duplicate the page for every cut-out section because we are passing by reference
+				// so if the mediabox moves, every section of the page will be affected
+				p := page.Duplicate()
 
-		// crop the page
-		page.MediaBox = mbox
+				mmbox, err := p.GetMediaBox()
+				if err != nil {
+					panic(fmt.Sprintf("error processing page %d: %v", i, err))
+				}
+				(*mmbox).Llx = xs[x]
+				(*mmbox).Lly = ys[y]
+				(*mmbox).Urx = xs[x+1]
+				(*mmbox).Ury = ys[y+1]
 
-		err = pdfWriter.AddPage(page)
-		if err != nil {
-			panic(fmt.Sprintf("error cropping page %d: %v", i, err))
+				// crop the page
+				p.MediaBox = mmbox
+
+				err = pdfWriter.AddPage(p)
+				if err != nil {
+					panic(fmt.Sprintf("error cropping page %d: %v", i, err))
+				}
+			}
 		}
-
 	}
 
 	fOutput, err := os.Create(*output)
