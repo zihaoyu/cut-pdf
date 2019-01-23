@@ -18,3 +18,7 @@ The final output will be:
 4. Page 4: lower right section of original page 1
 5. Page 5: upper left section of original page 2
 6. ... and so on
+
+## Unidoc
+
+Note: A unidoc license is **not** included.
